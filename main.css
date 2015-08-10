@@ -1,0 +1,103 @@
+body {
+	background-color: #465872;
+}
+form#gpsLog{
+	border-radius: 10px;
+	max-width: 450px;
+	width: 90%;
+	margin: 30px auto;
+	padding: 30px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+div#container {
+	text-align: center;
+}
+.form-control{
+	text-align: center;
+	border: 1px solid #ddd;
+	margin: 2px;
+	resize: none;
+	font-size: 1.4em;
+	width: 40%;
+	height: 200%;
+}
+textarea#notes {
+	width: 93%;
+	border-radius: 6px;
+	padding: 10px;
+	font-size: 1.4em;
+	border: 1px solid #ddd;
+	resize: none;
+}
+input[type=file] {
+	position: static;
+	z-index: 2;
+	text-align: center;
+	border: 1px solid #ddd;
+	margin: 2px;
+	resize: none;
+	font-size: 1.4em;
+	width: 40%;
+	display: inline-block;
+	padding: 6px 12px;
+	opacity: 0.5;
+}
+div#testcontainer {
+	width: 100%;
+}
+
+.my-col-6 {
+	display: inline-block;
+	width: 48%;
+	position: relative;
+}
+.form-control.btn {
+}
+.form-control.btn#submit {
+	width:100%;
+	background-color:green;
+	color:white;
+}
+span#datebox-detail {
+	display: none;
+}
+span#datebox {
+	font-size: 2em;
+}
+
+
+
+
+
+
+
+/* desktop */
+@media (min-width: 768px) {
+	.form-control {
+		margin: 10px;
+		font-size: 2em;
+	}
+	span#datebox-detail {
+		display: inline;
+	}
+	span#datebox {
+		font-size: 2.5em;
+	}
+}
+
+.form-control#addPhoto{
+	background-color: green;
+	width: 35%;
+	float: right;
+	color: #cfc;
+	text-align: center;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+.form-control#addPhoto:hover{
+	background-color: #cfc;
+	color: #303;
+}

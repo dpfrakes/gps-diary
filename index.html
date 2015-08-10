@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GPS Diary</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+	<form id="gpsLog">
+		<div id="container">
+			<div class="row"><span id="datebox"></span></div>
+			<div class="row"><span id="datebox-detail"></span></div>
+			<div class="row">
+				<textarea name="notes" id="notes" cols="30" rows="6"></textarea>
+			</div>
+			<div class="row">
+				<div class="my-col-6" style="border:2px solid yellow;">
+					<input type="file"></input>
+					<!--button class="form-control btn" id="photobtn" onclick="addPhoto()" style="position:absolute;margin:0;">photo</button-->
+					<img src="samplebutton.jpg" style="position:absolute;z-index:1;height:100%;margin:0" />
+				</div>
+				<div class="my-col-6"><button class="form-control btn" id="locationbtn" onclick="addLocation()">gps</button></div>
+				<div class="my-col-6"><button class="form-control btn" id="videobtn" onclick="addVideo()">video</button></div>
+				<div class="my-col-6"><button class="form-control btn" id="audiobtn" onclick="addAudio()">audio</button></div>
+			</div>
+		</div>
+		<!--input type="text" class="form-control" id="title" placeholder="Title">
+		<button class="form-control btn" id="addPhoto">+ Photo</button>
+		<textarea class="form-control" rows="5" id="notes" placeholder="Notes"></textarea-->
+		<button class="form-control btn" id="submit" >Log It</button>
+	</form>
+</body>
+<script src="main.js"></script>
+</html>
