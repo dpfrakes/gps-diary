@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" ng-app="diaryApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GPS Diary</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="main2.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	
+	
+	<style>
+
+
+
+
+
+input[type="file"].fileElem {
+  /* Note: display:none on the input won't trigger the click event in WebKit.
+     Setting visibility to hidden and width 0 works.*/
+  visibility: hidden;
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+
+/*
+#fileSelect {
+  color: #222;
+  font-size: 18pt;
+  padding: 12px;
+  background: -webkit-gradient(linear, left top, left bottom,
+      color-stop(0.5, rgba(255,255,255,0.3)), color-stop(0.5, #ffcc00), to(#ffcc00));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.3) 50%, #ffcc00 50%, #ffcc00);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 50%, #ffcc00 50%, #ffcc00);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.3) 50%, #ffcc00 50%, #ffcc00);
+  background: -o-linear-gradient(top, rgba(255,255,255,0.3) 50%, #ffcc00 50%, #ffcc00);
+  background: linear-gradient(top, rgba(255,255,255,0.3) 50%, #ffcc00 50%, #ffcc00);
+  background-color: #ffcc00;
+  border: 1px solid #ffcc00;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  border-bottom: 1px solid #9f9f9f;
+  cursor: pointer;
+}
+#fileSelect:hover {
+  background: -webkit-gradient(linear, left top, left bottom,
+                               color-stop(0, #fff), color-stop(0.7, #ff0000),
+                               to(#ff0000));
+  background: -webkit-linear-gradient(top, #fff, #ff0000 70%, #ff0000);
+  background: -moz-linear-gradient(top, #fff, #ff0000 70%, #ff0000);
+  background: -o-linear-gradient(top, #fff, #ff0000 70%, #ff0000);
+  background: -ms-linear-gradient(top, #fff, #ff0000 70%, #ff0000);
+  background: linear-gradient(top, #fff, #ff0000 70%, #ff0000);
+}
+
+.button::-webkit-file-upload-button {
+  visibility: hidden;
+}
+*/
+
+*{border: 1px dashed yellow;}
+</style>
+	
+	
+	
+	
+</head>
+<body>
+	<div id="container" ng-controller="diaryController">
+		<div class="row" id="location" ng-model="location">{{location}}</div>
+		<div class="row" id="localtime">{{localtime}}</div>
+		<div class="row">
+			<button id="tag">Quick Tag</button>
+		</div>
+		<div class="row" id="tagconfirmation">{{tagconfirmation}}</div>
+		<div class="row">
+			<button id="log">Log Entry</button>
+		</div>
+		<div class="row" id="entryinfo">
+			
+			
+			<section>
+				<input type="file" id="fileElem" multiple onchange="handleFiles(this.files)">
+				<button class="btn" id="fileSelect">Add Files</button>
+			</section>
+			
+			
+			<div class="my-col-6">
+				<input type="file" id="photoElem" class="fileElem" multiple onchange="handleFiles(this.files)">
+				<button class="btn" id="photoSelect">photo</button>
+			</div>
+			<div class="my-col-6">
+				<input type="file" id="noteElem" class="fileElem" multiple onchange="handleFiles(this.files)">
+				<button class="btn" id="noteSelect">note</button>
+			</div>
+			<div class="my-col-6">
+				<input type="file" id="videoElem" class="fileElem" multiple onchange="handleFiles(this.files)">
+				<button class="btn" id="videoSelect">video</button>
+			</div>
+			<div class="my-col-6">
+				<input type="file" id="audioElem" class="fileElem" multiple onchange="handleFiles(this.files)">
+				<button class="btn" id="audioSelect">audio</button>
+			</div>
+			<div class="row">
+				<button class="form-control btn" id="logentry">Log Entry</button>
+			</div>
+			<div class="row">
+				<button class="form-control btn" id="cancellog">Cancel</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+document.querySelector('#photoSelect').addEventListener('click', function(e) {
+  var fileInput = document.querySelector('#photoElem');
+  //click(fileInput); // Simulate the click with a custom event.
+  fileInput.click(); // Or, use the native click() of the file input.
+}, false);
+document.querySelector('#noteSelect').addEventListener('click', function(e) {
+  var fileInput = document.querySelector('#noteElem');
+  //click(fileInput); // Simulate the click with a custom event.
+  fileInput.click(); // Or, use the native click() of the file input.
+}, false);
+document.querySelector('#videoSelect').addEventListener('click', function(e) {
+  var fileInput = document.querySelector('#videoElem');
+  //click(fileInput); // Simulate the click with a custom event.
+  fileInput.click(); // Or, use the native click() of the file input.
+}, false);
+document.querySelector('#audioSelect').addEventListener('click', function(e) {
+  var fileInput = document.querySelector('#audioElem');
+  //click(fileInput); // Simulate the click with a custom event.
+  fileInput.click(); // Or, use the native click() of the file input.
+}, false);
+
+function handleFiles(files) {
+  alert('Well done!');
+}
+</script>
+<script src="location.js"></script>
+<script src="main2.js"></script>
+</html>
