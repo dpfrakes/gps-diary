@@ -17,7 +17,6 @@ $(document).ready(function() {
 	
 	function updateLGS(position) {
 		//var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-		//console.log(locJSON);
 		myUrl = getMyUrl(position.coords.latitude,position.coords.longitude);
 		getLocation(myUrl);
 	}
@@ -25,16 +24,16 @@ $(document).ready(function() {
 		console.error('Error (' + e.code + '): cannot get current location');
 		//var defaultLat = 38.88498248850142;
 		//var defaultLon = -77.02302372548729;
-		myUrl = getMyUrl(0,0);
 		updateFormWithLocation('Location Unknown');
 	}
 	function updateFormWithLocation(s) {
-		document.getElementById("locationgoeshere").innerHTML = s;
+		document.getElementById("location").innerHTML = s;
 	}
 	function getMyUrl(lat,lon){
 		return 'https://maps.googleapis.com/maps/api/geocode/json';
 	}
 	function getLocation(url,lat,lon) {
+		var apiKey = '';
 		$.ajax({
 			url: url,
 			type: "get",
