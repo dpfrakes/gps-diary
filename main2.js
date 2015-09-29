@@ -5,6 +5,68 @@ diaryApp.controller('diaryController',['$scope',function($scope){
 
 $(document).ready(function() {
 	
+	
+	
+	
+	
+	
+	
+	var myUrl;
+	
+	navigator.geolocation.getCurrentPosition(updateLGS, error);
+	
+	function updateLGS(position) {
+		//var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+		//console.log(locJSON);
+		myUrl = getMyUrl(position.coords.latitude,position.coords.longitude);
+		getLocation(myUrl);
+	}
+	function error(e) {
+		console.error('Error (' + e.code + '): cannot get current location');
+		//var defaultLat = 38.88498248850142;
+		//var defaultLon = -77.02302372548729;
+		myUrl = getMyUrl(0,0);
+		updateFormWithLocation('Location Unknown');
+	}
+	function updateFormWithLocation(s) {
+		document.getElementById("locationgoeshere").innerHTML = s;
+	}
+	function getMyUrl(lat,lon){
+		return 'https://maps.googleapis.com/maps/api/geocode/json';
+	}
+	function getLocation(url,lat,lon) {
+		$.ajax({
+			url: url,
+			type: "get",
+			data:{latlng:lat+','+lon,key:apiKey},
+			success: function(response) {
+				//var jsonObj = JSON.parse(JSON.stringify(response));
+				//var firstAddress = jsonObj.results[0].address_components[0];
+				//updateFormWithLocation(firstAddress.long_name);
+				updateFormWithLocation(JSON.stringify(response));
+			},
+			error: function(e) {
+				console.error('Error retrieving JSON');
+			}
+		});
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	$("#testslide").click(function() {
 		$("#testslidecontent").slideToggle( "fast" );
 	});
