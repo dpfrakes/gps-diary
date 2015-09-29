@@ -15,12 +15,14 @@ function getLocation() {
 		
 		/* Google Location API to return country name of coordinates */
 		/* If location is large country, use city; otherwise country */
-		var country = '' /* TODO */;
-		if(country.toUpperCase == 'UNITED STATES OF AMERICA') {
-			var city = '' /* TODO */;
-			return city;
+		var c = '' /* TODO */;
+		if(c.toUpperCase == 'UNITED STATES OF AMERICA') {
+			c = '' /* TODO : city */;
 		}
-		$scope.location = country;
+			
+		$scope.$apply(function() {
+			$scope.location = c;
+		});
 	};
 
 	function error(err) {
