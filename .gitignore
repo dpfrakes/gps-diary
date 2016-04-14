@@ -1,0 +1,17 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+# npm install
+node_modules/
+
+# gulp
+platforms/
+plugins/
+hooks/
+
+# bower install
+bower_components/
+
+# ionic resources
+resources/android/
+resources/ios/

@@ -1,0 +1,21 @@
+<ion-view title="Log Entry" id="log-entry">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+        <form class="list">
+            <button id="logEntry-button6" class="button button-positive  button-block">Quick Tag</button>
+            <label class="item item-input" name="title">
+                <input type="text" placeholder="Title">
+            </label>
+            <label class="item item-input" name="entry">
+                <span class="input-label"></span><textarea placeholder="Entry"> </textarea>
+            </label>
+            <ion-toggle toggle-class="toggle-balanced" ng-checked="true">Location</ion-toggle>
+        </form>
+        <div class="button-bar">
+            <button id="logEntry-photo" class="button button-stable button-block icon ion-android-camera"></button>
+            <button id="logEntry-video" class="button button-stable button-block icon ion-ios-videocam"></button>
+            <button id="logEntry-audio" class="button button-stable button-block icon ion-mic-a"></button>
+        </div>
+        <form class="list"></form>
+        <button id="logEntry-button5" class="button button-balanced button-block">Log Entry</button>
+    </ion-content>
+</ion-view>
